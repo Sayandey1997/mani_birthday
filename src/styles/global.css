@@ -1,9 +1,17 @@
 /* ============================================================
    RESET & BASE
    ============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -14,12 +22,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-button { cursor: pointer; border: none; outline: none; font-family: inherit; }
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
 
 /* ============================================================
    LAYOUT
    ============================================================ */
-.app { width: 100%; min-height: 100vh; }
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
 
 .phase-wrap {
   position: fixed;
@@ -31,9 +47,18 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 /* ============================================================
    SCROLLBAR
    ============================================================ */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
-::-webkit-scrollbar-thumb { background: rgba(200,100,200,0.4); border-radius: 3px; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 100, 200, 0.4);
+  border-radius: 3px;
+}
 
 /* ============================================================
    SPACE SCENE
@@ -68,30 +93,44 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   pointer-events: none;
   filter: blur(70px);
 }
+
 .nebula-1 {
   width: clamp(200px, 40vw, 500px);
   height: clamp(200px, 40vw, 500px);
   background: rgba(120, 40, 220, 0.18);
-  top: -10%; left: -5%;
+  top: -10%;
+  left: -5%;
   animation: nebFloat 10s ease-in-out infinite;
 }
+
 .nebula-2 {
   width: clamp(150px, 30vw, 400px);
   height: clamp(150px, 30vw, 400px);
   background: rgba(30, 80, 200, 0.14);
-  bottom: -5%; right: -5%;
+  bottom: -5%;
+  right: 0;
   animation: nebFloat 13s ease-in-out infinite reverse;
 }
+
 .nebula-3 {
   width: clamp(100px, 20vw, 280px);
   height: clamp(100px, 20vw, 280px);
   background: rgba(200, 50, 150, 0.12);
-  top: 40%; left: 55%;
+  top: 40%;
+  left: 45%;
   animation: nebFloat 8s ease-in-out infinite;
 }
+
 @keyframes nebFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(20px, -15px) scale(1.08); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(20px, -15px) scale(1.08);
+  }
 }
 
 /* Gold / silver sparkle particles */
@@ -101,16 +140,26 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   pointer-events: none;
   animation: sparkleAnim ease-in-out infinite;
 }
+
 @keyframes sparkleAnim {
-  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-  50%       { opacity: 1; transform: scale(1) rotate(180deg); }
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
 }
 
 /* Space ships */
 .spaceship {
   position: absolute;
   pointer-events: none;
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
 /* Space centre content */
@@ -121,6 +170,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   padding: clamp(20px, 5vw, 60px) clamp(16px, 5vw, 40px);
   max-width: min(90vw, 600px);
 }
+
 /* Greeting line ("Hi Mani! 👋") */
 .space-greeting {
   font-family: 'Dancing Script', cursive;
@@ -130,6 +180,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   margin-bottom: clamp(8px, 2vw, 14px);
   text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
 }
+
 .space-title {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(3rem, 12vw, 6rem);
@@ -143,10 +194,17 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   text-shadow: none;
   margin-bottom: clamp(12px, 3vw, 20px);
 }
+
 @keyframes shimmerGold {
-  0%   { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
 }
+
 .space-sub {
   font-size: clamp(0.85rem, 2.5vw, 1rem);
   color: rgba(200, 185, 255, 0.65);
@@ -169,15 +227,26 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   font-weight: 700;
   font-family: 'Dancing Script', cursive;
   border-radius: 99px;
-  box-shadow: 0 0 20px rgba(255,215,0,0.5), 0 6px 24px rgba(0,0,0,0.4);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 6px 24px rgba(0, 0, 0, 0.4);
   animation: btnPulse 2s ease-in-out infinite, shimmerGold 2s linear infinite;
   letter-spacing: 0.04em;
 }
-.btn-icon { font-size: 1.4em; line-height: 1; }
+
+.btn-icon {
+  font-size: 1.4em;
+  line-height: 1;
+}
 
 @keyframes btnPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(255,215,0,0.5), 0 6px 24px rgba(0,0,0,0.4); }
-  50%       { box-shadow: 0 0 36px rgba(255,215,0,0.9), 0 6px 30px rgba(0,0,0,0.5); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 6px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 36px rgba(255, 215, 0, 0.9), 0 6px 30px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* ============================================================
@@ -193,8 +262,10 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  padding-top: clamp(90px, 15vw, 130px); /* room for string lights */
-  padding-bottom: clamp(90px, 14vw, 110px); /* room for fixed cake button */
+  padding-top: clamp(90px, 15vw, 130px);
+  /* room for string lights */
+  padding-bottom: clamp(90px, 14vw, 110px);
+  /* room for fixed cake button */
 }
 
 /* ── String Lights ── */
@@ -209,6 +280,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   padding: 0 10px;
   z-index: 10;
 }
+
 .lights-wire {
   position: absolute;
   top: 14px;
@@ -217,6 +289,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   height: 3px;
   background: linear-gradient(90deg, transparent, #555, #333, #555, transparent);
 }
+
 .bulb-wrap {
   display: flex;
   flex-direction: column;
@@ -226,6 +299,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   top: 0;
   /* small cord from wire to bulb */
 }
+
 .bulb-wrap::before {
   content: '';
   display: block;
@@ -233,21 +307,29 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   height: 14px;
   background: #555;
 }
+
 .bulb-cap {
   width: 10px;
   height: 6px;
   background: linear-gradient(to bottom, #888, #555);
   border-radius: 2px 2px 0 0;
 }
+
 .bulb-body {
   width: clamp(14px, 3vw, 20px);
   height: clamp(18px, 4vw, 26px);
   border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
   animation: glow 1.2s ease-in-out infinite alternate;
 }
+
 @keyframes glow {
-  from { filter: brightness(0.7); }
-  to   { filter: brightness(1.3); }
+  from {
+    filter: brightness(0.7);
+  }
+
+  to {
+    filter: brightness(1.3);
+  }
 }
 
 /* ── Background pink stars ── */
@@ -257,11 +339,21 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   pointer-events: none;
   user-select: none;
   animation: starTwinkle ease-in-out infinite;
-  text-shadow: 0 0 6px rgba(244,114,182,0.6);
+  text-shadow: 0 0 6px rgba(244, 114, 182, 0.6);
 }
+
 @keyframes starTwinkle {
-  0%, 100% { opacity: 0.2; transform: scale(0.7); }
-  50%       { opacity: 1; transform: scale(1.2); }
+
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
 
 /* ── Birthday Banner ── */
@@ -272,6 +364,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   width: 100%;
   padding: 0 clamp(8px, 3vw, 20px);
 }
+
 .banner-text {
   display: flex;
   flex-wrap: wrap;
@@ -279,16 +372,21 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   gap: 0;
   line-height: 1;
 }
+
 .banner-char {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(2rem, 7vw, 4.5rem);
   font-weight: 700;
   display: inline-block;
-  text-shadow: 2px 2px 0 rgba(0,0,0,0.12);
-  -webkit-text-stroke: 0.5px rgba(0,0,0,0.15);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.12);
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.15);
   transition: color 0.3s;
 }
-.banner-space { display: inline-block; width: clamp(8px, 2vw, 18px); }
+
+.banner-space {
+  display: inline-block;
+  width: clamp(8px, 2vw, 18px);
+}
 
 /* Streamers */
 .streamers {
@@ -301,6 +399,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   pointer-events: none;
   z-index: -1;
 }
+
 .streamer {
   width: 4px;
   border-radius: 2px;
@@ -308,9 +407,15 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   animation: streamerSway 2s ease-in-out infinite alternate;
   transform-origin: top center;
 }
+
 @keyframes streamerSway {
-  from { transform: rotate(-8deg); }
-  to   { transform: rotate(8deg); }
+  from {
+    transform: rotate(-8deg);
+  }
+
+  to {
+    transform: rotate(8deg);
+  }
 }
 
 /* ── Balloon ── */
@@ -322,22 +427,25 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   z-index: 5;
   pointer-events: none;
 }
+
 .balloon-body {
   width: clamp(40px, 8vw, 65px);
   height: clamp(50px, 10vw, 80px);
   border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
   position: relative;
 }
+
 .balloon-shine {
   position: absolute;
   top: 14%;
   left: 18%;
   width: 28%;
   height: 32%;
-  background: rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   transform: rotate(-30deg);
 }
+
 .balloon-knot {
   position: absolute;
   bottom: -9px;
@@ -348,22 +456,25 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 }
+
 .balloon-string {
   width: 1px;
   height: clamp(50px, 10vw, 90px);
-  background: rgba(0,0,0,0.22);
+  background: rgba(0, 0, 0, 0.22);
   margin-top: 0;
 }
 
 /* ── Lights action button (centered at bottom) ── */
 .lights-action {
   position: absolute;
-  bottom: clamp(20px, 4vw, 36px);
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: clamp(80px, 15vw, 110px);
+  left: 0;
+  right: 0;
   z-index: 50;
-  text-align: center;
-  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
 }
 
 /* Pink buttons */
@@ -378,21 +489,32 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   font-size: clamp(1rem, 3vw, 1.2rem);
   font-weight: 700;
   border-radius: 99px;
-  box-shadow: 0 4px 20px rgba(236,72,153,0.45);
+  box-shadow: 0 4px 20px rgba(236, 72, 153, 0.45);
   transition: box-shadow 0.2s;
   letter-spacing: 0.02em;
 }
-.btn-pink:hover { box-shadow: 0 6px 28px rgba(236,72,153,0.7); }
+
+.btn-pink:hover {
+  box-shadow: 0 6px 28px rgba(236, 72, 153, 0.7);
+}
+
 .btn-pink--gold {
   background: linear-gradient(135deg, #f59e0b, #d97706);
-  box-shadow: 0 4px 20px rgba(245,158,11,0.45);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.45);
 }
-.btn-pink--gold:hover { box-shadow: 0 6px 28px rgba(245,158,11,0.7); }
+
+.btn-pink--gold:hover {
+  box-shadow: 0 6px 28px rgba(245, 158, 11, 0.7);
+}
+
 .btn-pink--red {
   background: linear-gradient(135deg, #ff2244, #cc0022);
-  box-shadow: 0 4px 22px rgba(255,34,68,0.5);
+  box-shadow: 0 4px 22px rgba(255, 34, 68, 0.5);
 }
-.btn-pink--red:hover { box-shadow: 0 6px 30px rgba(255,34,68,0.8); }
+
+.btn-pink--red:hover {
+  box-shadow: 0 6px 30px rgba(255, 34, 68, 0.8);
+}
 
 /* ============================================================
    CAKE SCENE
@@ -418,6 +540,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   height: 400px;
   pointer-events: none;
 }
+
 .ring-sparkle {
   position: absolute;
   top: 50%;
@@ -443,7 +566,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   font-family: 'Dancing Script', cursive;
   font-size: clamp(1.2rem, 4vw, 1.8rem);
   color: #ffd700;
-  text-shadow: 0 0 12px rgba(255,215,0,0.5);
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
   letter-spacing: 0.04em;
   text-align: center;
 }
@@ -454,7 +577,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   flex-direction: column;
   align-items: center;
   gap: 0;
-  filter: drop-shadow(0 10px 40px rgba(255,100,180,0.35));
+  filter: drop-shadow(0 10px 40px rgba(255, 100, 180, 0.35));
 }
 
 /* Candles */
@@ -464,12 +587,14 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   margin-bottom: 2px;
   z-index: 2;
 }
+
 .candle-unit {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
 }
+
 .candle-body {
   width: clamp(8px, 2vw, 12px);
   height: clamp(28px, 6vw, 44px);
@@ -477,12 +602,11 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   position: relative;
   overflow: hidden;
 }
+
 .candle-stripe {
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    45deg, transparent, transparent 4px, rgba(255,255,255,0.2) 4px, rgba(255,255,255,0.2) 5px
-  );
+  background: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255, 255, 255, 0.2) 4px, rgba(255, 255, 255, 0.2) 5px);
 }
 
 /* Flame */
@@ -492,6 +616,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   height: clamp(18px, 4vw, 26px);
   margin-bottom: -2px;
 }
+
 .flame-outer {
   position: absolute;
   inset: 0;
@@ -499,6 +624,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
   filter: blur(1px);
 }
+
 .flame-inner {
   position: absolute;
   bottom: 0;
@@ -509,6 +635,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   background: radial-gradient(ellipse at bottom, #fff 0%, #ffe800 40%, #ff9500 100%);
   border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
 }
+
 .flame-core {
   position: absolute;
   bottom: 2px;
@@ -528,13 +655,18 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   align-items: center;
   position: relative;
 }
+
 .tier-frosting {
   height: clamp(12px, 3vw, 18px);
   background: linear-gradient(to bottom, #fff 0%, #ffe4f0 100%);
   border-radius: 6px 6px 0 0;
   width: 100%;
 }
-.tier-frosting--top { border-radius: 8px 8px 0 0; }
+
+.tier-frosting--top {
+  border-radius: 8px 8px 0 0;
+}
+
 .tier-body {
   display: flex;
   align-items: center;
@@ -542,18 +674,39 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   position: relative;
   border-radius: 0 0 6px 6px;
 }
-.tier-top  .tier-frosting, .tier-top  .tier-body { width: clamp(90px, 20vw, 130px); }
-.tier-top  .tier-body  { height: clamp(40px, 9vw, 60px); }
-.tier-mid  .tier-frosting, .tier-mid  .tier-body { width: clamp(140px, 32vw, 200px); }
-.tier-mid  .tier-body  { height: clamp(48px, 10vw, 70px); }
-.tier-bottom .tier-frosting, .tier-bottom .tier-body { width: clamp(190px, 44vw, 270px); }
-.tier-bottom .tier-body  { height: clamp(54px, 12vw, 80px); }
+
+.tier-top .tier-frosting,
+.tier-top .tier-body {
+  width: clamp(90px, 20vw, 130px);
+}
+
+.tier-top .tier-body {
+  height: clamp(40px, 9vw, 60px);
+}
+
+.tier-mid .tier-frosting,
+.tier-mid .tier-body {
+  width: clamp(140px, 32vw, 200px);
+}
+
+.tier-mid .tier-body {
+  height: clamp(48px, 10vw, 70px);
+}
+
+.tier-bottom .tier-frosting,
+.tier-bottom .tier-body {
+  width: clamp(190px, 44vw, 270px);
+}
+
+.tier-bottom .tier-body {
+  height: clamp(54px, 12vw, 80px);
+}
 
 .tier-deco {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(0.65rem, 1.8vw, 0.95rem);
-  color: rgba(255,255,255,0.95);
-  text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
   padding: 0 6px;
   white-space: nowrap;
@@ -569,6 +722,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   justify-content: space-around;
   padding: 0 10px;
 }
+
 .dot-deco {
   display: inline-block;
   width: clamp(5px, 1.2vw, 8px);
@@ -582,7 +736,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   height: clamp(14px, 3vw, 20px);
   background: linear-gradient(to bottom, #e8c9a0, #c8a07a);
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Cake buttons */
@@ -594,11 +748,14 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   font-size: clamp(1.1rem, 4vw, 1.4rem);
   font-weight: 700;
   border-radius: 99px;
-  box-shadow: 0 4px 24px rgba(238,9,121,0.5);
+  box-shadow: 0 4px 24px rgba(238, 9, 121, 0.5);
   letter-spacing: 0.04em;
   transition: box-shadow 0.2s;
 }
-.btn-cake:hover { box-shadow: 0 6px 32px rgba(238,9,121,0.75); }
+
+.btn-cake:hover {
+  box-shadow: 0 6px 32px rgba(238, 9, 121, 0.75);
+}
 
 .cake-wish-text {
   font-family: 'Dancing Script', cursive;
@@ -630,11 +787,25 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   bottom: -40px;
   animation: floatUp ease-in infinite;
 }
+
 @keyframes floatUp {
-  0%   { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
-  10%  { opacity: 1; }
-  80%  { opacity: 0.8; }
-  100% { transform: translateY(-110vh) rotate(360deg) scale(0.6); opacity: 0; }
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(0.6);
+    opacity: 0;
+  }
 }
 
 .hbd-content {
@@ -656,17 +827,20 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   margin-bottom: clamp(18px, 4vw, 32px);
   line-height: 1.1;
 }
+
 .hbd-word {
   display: inline-block;
   font-family: 'Dancing Script', cursive;
   font-size: clamp(3rem, 13vw, 7.5rem);
   font-weight: 700;
-  text-shadow: 3px 3px 0 rgba(0,0,0,0.08), 0 0 30px currentColor;
-  -webkit-text-stroke: 0.5px rgba(255,255,255,0.3);
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08), 0 0 30px currentColor;
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.3);
   line-height: 1;
   /* Force "Mani 💖" to its own line on small screens */
 }
+
 @media (max-width: 500px) {
+
   .hbd-word:nth-child(3),
   .hbd-word:nth-child(4) {
     flex-basis: 100%;
@@ -680,6 +854,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   margin-bottom: clamp(16px, 3vw, 28px);
   line-height: 1.7;
 }
+
 .hbd-emojis {
   display: flex;
   justify-content: center;
@@ -696,14 +871,17 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   font-size: clamp(1.1rem, 3.5vw, 1.4rem);
   font-weight: 700;
   border-radius: 99px;
-  box-shadow: 0 4px 24px rgba(191,90,242,0.5);
+  box-shadow: 0 4px 24px rgba(191, 90, 242, 0.5);
   letter-spacing: 0.04em;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   transition: box-shadow 0.2s;
 }
-.btn-hbd:hover { box-shadow: 0 6px 32px rgba(191,90,242,0.8); }
+
+.btn-hbd:hover {
+  box-shadow: 0 6px 32px rgba(191, 90, 242, 0.8);
+}
 
 /* ============================================================
    PHOTO MESSAGE SCENE
@@ -722,7 +900,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 
 .photo-sparkle {
   position: absolute;
-  color: rgba(255,215,0,0.7);
+  color: rgba(255, 215, 0, 0.7);
   pointer-events: none;
   font-size: clamp(0.6rem, 1.5vw, 1rem);
   animation: sparkleAnim ease-in-out infinite;
@@ -738,8 +916,11 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   max-width: 900px;
   width: 100%;
 }
+
 @media (max-width: 640px) {
-  .photo-scene__inner { grid-template-columns: 1fr; }
+  .photo-scene__inner {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Photo frame */
@@ -752,7 +933,12 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   margin: 0 auto;
   order: 0;
 }
-@media (max-width: 640px) { .photo-frame { order: -1; } }
+
+@media (max-width: 640px) {
+  .photo-frame {
+    order: -1;
+  }
+}
 
 .photo-ring {
   border-radius: 50%;
@@ -762,6 +948,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   position: relative;
   background: linear-gradient(135deg, #4c1d95, #831843);
 }
+
 .photo-img {
   width: 100%;
   height: 100%;
@@ -769,6 +956,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   object-position: top center;
   display: block;
 }
+
 .photo-fallback {
   width: 100%;
   height: 100%;
@@ -793,7 +981,11 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 }
 
 /* Photo message text */
-.photo-message { position: relative; z-index: 2; }
+.photo-message {
+  position: relative;
+  z-index: 2;
+}
+
 .photo-msg-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.5rem, 4.5vw, 2.4rem);
@@ -802,15 +994,23 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   margin-bottom: clamp(14px, 3vw, 22px);
   line-height: 1.2;
 }
-.photo-msg-lines { margin-bottom: clamp(20px, 4vw, 32px); }
+
+.photo-msg-lines {
+  margin-bottom: clamp(20px, 4vw, 32px);
+}
+
 .msg-line {
   font-family: 'Playfair Display', serif;
   font-size: clamp(0.85rem, 2.2vw, 1rem);
-  color: rgba(249,168,212,0.9);
+  color: rgba(249, 168, 212, 0.9);
   line-height: 1.9;
   font-style: italic;
 }
-.msg-spacer { height: 0.8rem; display: block; }
+
+.msg-spacer {
+  height: 0.8rem;
+  display: block;
+}
 
 /* Cat bye */
 .cat-bye {
@@ -819,39 +1019,78 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   gap: 14px;
   flex-wrap: wrap;
 }
+
 .cat-face {
   font-size: clamp(2.5rem, 7vw, 4rem);
   display: block;
   cursor: default;
 }
+
 .cat-speech {
   position: relative;
-  background: rgba(255,255,255,0.12);
-  border: 1.5px solid rgba(249,168,212,0.3);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(249, 168, 212, 0.3);
   border-radius: 14px;
   padding: 10px 16px;
   backdrop-filter: blur(8px);
 }
+
 .cat-speech p {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   color: #f9a8d4;
   line-height: 1.6;
 }
+
 .speech-tail {
   position: absolute;
   left: -10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 0; height: 0;
+  width: 0;
+  height: 0;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-right: 10px solid rgba(255,255,255,0.12);
+  border-right: 10px solid rgba(255, 255, 255, 0.12);
 }
+
 .paw-wave {
   font-size: clamp(1.4rem, 4vw, 1.8rem);
   display: block;
   transform-origin: bottom center;
+}
+
+/* ============================================================
+   PHOTO CLOSE BUTTON
+   ============================================================ */
+.photo-close-btn {
+  position: fixed;
+  top: clamp(14px, 3vw, 24px);
+  right: clamp(14px, 3vw, 24px);
+  z-index: 9999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(249, 168, 212, 0.45);
+  color: rgba(249, 168, 212, 0.95);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, border-color 0.2s;
+}
+
+.photo-close-btn:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(249, 168, 212, 0.8);
+  transform: scale(1.1);
+}
+
+.photo-close-btn:active {
+  transform: scale(0.95);
 }
 
 /* ============================================================
@@ -867,23 +1106,33 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   gap: 8px;
   padding: 11px 18px;
   background: rgba(10, 4, 30, 0.82);
-  border: 1.5px solid rgba(167,139,250,0.4);
+  border: 1.5px solid rgba(167, 139, 250, 0.4);
   border-radius: 99px;
   color: rgba(216, 196, 255, 0.9);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
   backdrop-filter: blur(12px);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
   transition: border-color 0.3s;
 }
-.music-btn--playing { border-color: rgba(244,114,182,0.7); }
+
+.music-btn--playing {
+  border-color: rgba(244, 114, 182, 0.7);
+}
+
 .music-ring {
   position: absolute;
   inset: 0;
   border-radius: 99px;
-  border: 1.5px solid rgba(244,114,182,0.6);
+  border: 1.5px solid rgba(244, 114, 182, 0.6);
   pointer-events: none;
 }
-.music-icon  { font-size: 1rem; }
-.music-label { white-space: nowrap; }
+
+.music-icon {
+  font-size: 1rem;
+}
+
+.music-label {
+  white-space: nowrap;
+}

@@ -79,7 +79,7 @@ export default function App() {
 
         {phase === 'message' && (
           <motion.div key="message" className="phase-wrap" {...fade}>
-            <PhotoMessage />
+            <PhotoMessage onBack={() => setPhase('space')} />
           </motion.div>
         )}
 

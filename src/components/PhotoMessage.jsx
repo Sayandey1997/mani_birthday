@@ -51,13 +51,13 @@ function CatBye() {
   )
 }
 
-export default function PhotoMessage() {
+export default function PhotoMessage({ onBack }) {
   const firedRef = useRef(false)
 
   useEffect(() => {
     if (firedRef.current) return
     firedRef.current = true
-    const colors = ['#ff2d55','#bf5af2','#ff9f0a','#30d158','#0a84ff','#ffd60a']
+    const colors = ['#ff2d55', '#bf5af2', '#ff9f0a', '#30d158', '#0a84ff', '#ffd60a']
     setTimeout(() => {
       confetti({ particleCount: 60, spread: 100, origin: { x: 0.5, y: 0.4 }, colors, shapes: ['star'] })
     }, 800)
@@ -65,6 +65,17 @@ export default function PhotoMessage() {
 
   return (
     <div className="photo-scene">
+
+      {/* Close / back button */}
+      {onBack && (
+        <button
+          className="photo-close-btn"
+          onClick={onBack}
+          aria-label="Go back to start"
+        >
+          ✕
+        </button>
+      )}
 
       {/* Floating sparkles */}
       {Array.from({ length: 20 }).map((_, i) => (
@@ -78,7 +89,7 @@ export default function PhotoMessage() {
             animationDuration: `${Math.random() * 3 + 2}s`,
           }}
         >
-          {['✦','✧','⋆','·','★'][i % 5]}
+          {['✦', '✧', '⋆', '·', '★'][i % 5]}
         </span>
       ))}
 
@@ -118,7 +129,7 @@ export default function PhotoMessage() {
           </motion.div>
 
           {/* Orbiting hearts */}
-          {['💖','💕','🌸','💗','✨'].map((e, i) => (
+          {['💖', '💕', '🌸', '💗', '✨'].map((e, i) => (
             <motion.span
               key={i}
               className="orbit-emoji"
